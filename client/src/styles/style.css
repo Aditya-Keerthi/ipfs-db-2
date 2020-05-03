@@ -1,0 +1,233 @@
+.site-wrapper{
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    height: 100vh;
+}
+
+.panel-landing{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lead{
+    display: flex;
+    flex-direction: column;
+    font-size: 60px;
+    font-weight: bold;
+    align-items: center;
+    background: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    border-radius: 15px;
+    padding: 20px;
+    width: 600px;
+    text-align: center;
+}
+
+.login-button{
+    width: fit-content;
+}
+
+.panel-welcome{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.navbar-div{
+    width: 200px;
+    height: 100%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+}
+
+.logout-div{
+    width: fit-content;
+    margin: 30px;
+}
+
+.logo{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.nav-links{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.nav-link{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+.nav-link:hover{
+    transition: 0.4 ease-in-out all;
+    cursor: pointer;
+    background: rgb(214, 214, 214);
+}
+
+.big-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.dashboard-div{
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-dashboard-div{
+    font-size: 30px;
+    width: 90%;
+    margin: 40px;
+    display: flex;
+}
+
+.dashboard-content{
+    width: 80%;
+    min-width: fit-content;
+    height: 80%;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    display: flex;
+}
+
+.databases-div{
+    width: 100%;
+    height: inherit;
+    display: flex;
+}
+
+.database-item{
+    width: 200px;
+    height: 200px;
+    background: #9aa4ff;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    margin: 20px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.database-item:hover{
+    cursor: pointer;
+}
+
+.control-div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.database-div{
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.database-content{
+    width: 80%;
+    min-width: fit-content;
+    min-height: 80%;
+    height: fit-content;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    display: flex;
+    flex-direction: column;
+}
+
+.database-info{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.database-table{
+    width: 100%;
+    flex: 1;
+    display: flex;
+}
+.database-column{
+    flex: 1;
+    border: 1px solid rgb(92, 92, 92);
+}
+
+.database-column-left{
+    border-radius: 0px 0px 0px 15px;
+}
+
+.database-column-right{
+    border-radius: 0px 0px 15px 0px;
+}
+
+.database-title{
+    width: 100%;
+    background: rgb(233, 233, 233);
+    height :fit-content;
+    padding: 10px;
+    border-radius: 15px 15px 0px 0px;
+    border : 1px solid rgb(92, 92, 92);
+
+}
+
+.column-title{
+    width: 100%;
+    padding: 5px;
+    background: rgb(233, 233, 233);
+    border-bottom: 1px solid rgb(92, 92, 92);
+}
+
+.column-content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height :100%;
+}
+
+.col1-item{
+    padding: 5px;
+}
+
+.col1-item:hover{
+    cursor: pointer;
+    background: lightgrey;
+}
+
+.col1-item-selected{
+    padding: 5px;
+    background: grey;
+}
+.col1-item-selected:hover{
+    cursor: pointer;
+    background: grey;
+}
