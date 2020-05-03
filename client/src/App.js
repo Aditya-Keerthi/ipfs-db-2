@@ -18,7 +18,7 @@ import AssessmentIcon from '@material-ui/icons/Assessment';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
 
-const appConfig = new AppConfig()
+const appConfig = new AppConfig(['store_write', 'publish_data'])
 const userSession = new UserSession({ appConfig: appConfig })
 
 const theme = createMuiTheme({
