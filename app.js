@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-// var indexRouter = require('./routes/index');
+var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var createMasterDB = require('./routes/createMasterDB');
 var query = require('./routes/query');
@@ -32,10 +32,6 @@ app.use('/setValues', setValues)
 app.use('/updateValues', updateValues)
 app.use('/createMasterDB', createMasterDB)
 app.use('/getDB', getDB);
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'/client/build/iApp.js'));
-});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
