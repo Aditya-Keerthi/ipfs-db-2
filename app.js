@@ -35,7 +35,7 @@ app.use('/getDB', getDB);
 
 /* GET home page. */
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'/client/build/iApp.js'));
+  res.sendFile(path.join(__dirname+'/client/build/App.js'));
 });
 
 // catch 404 and forward to error handler
