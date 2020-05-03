@@ -43,10 +43,12 @@ const query = async (key, dir) => {
     // console.log(masterDB[directory[0]])
     const documentHash = masterDB[directory[0]];
     const document = await get(documentHash);
-  
-    const value = document[directory[1]]
-    console.log(value)
-    return value
+    console.log(document)
+    var key = Object.keys(document)[0]  
+
+    const value = document[key]
+    console.log(key, value)
+    return [key, value]
   
   }
 

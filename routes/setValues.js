@@ -39,7 +39,7 @@ const setValues = async (docTitle, key, obj) => {
     const masterDB = await get(objHash)
   
     let updatedMasterDB = masterDB;
-  
+    console.log(masterDB)
     // const keys = Object.keys(obj);
     // const values = Object.values(obj);
     // let updated_obj = {
@@ -62,8 +62,9 @@ const setValues = async (docTitle, key, obj) => {
         // console.log(res[0].hash)
         hash = await res[0].hash
         // console.log(url)
-  
+        console.log(docTitle);
         updatedMasterDB[docTitle] = hash;
+        console.log(updatedMasterDB);
         let buffer = Buffer.from(JSON.stringify(updatedMasterDB));
   
         resolve(
@@ -94,8 +95,8 @@ const setValues = async (docTitle, key, obj) => {
 
 /* GET users listing. */
 router.post('/', async function(req, res, next) {
-
-    await setValues(req.body.docTitle, req.body.key, req.body.obj, {
+  console.log(req.body.doctitle);
+    await setValues(req.body.doctitle, req.body.key, req.body.obj, {
         post: "post request working yay!!!"
     }).then((result) => {
         res.send(result);

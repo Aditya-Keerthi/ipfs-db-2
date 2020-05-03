@@ -95,8 +95,9 @@ export default class App extends Component {
                 <Route exact path="/dashboard">
                   <Dashboard userSession={userSession} handleSignOut={ this.handleSignOut } />
                 </Route>
-                <Route path="/database/:hash">
-                  <Database></Database>
+                <Route path="/database/:hash" render={(routeProps) => 
+    <Database hash={routeProps.match.params.hash} userSession={userSession} {...routeProps}/>
+  }>
                 </Route>
                 <Route path="/users">
                   

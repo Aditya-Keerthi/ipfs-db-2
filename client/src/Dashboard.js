@@ -32,7 +32,8 @@ export default class Dashboard extends Component {
       statusIndex: 0,
       isLoading: false,
       databases : [{hash : "hfwduiphfaiusdh"}],
-      fileContents : []
+      fileContents : [],
+      dMap : []
     };
   }
   
@@ -45,27 +46,40 @@ export default class Dashboard extends Component {
     fetch("http://localhost:3005/createMasterDB", requestOptions)
       .then(response => response.text())
       .then(result => {
+        
         console.log(this.state.fileContents)
         if (this.state.fileContents.length !== 0) { // && this.state.fileContents !== []
           console.log(this.state.fileContents);
           console.log("not null")
-          let currentHashes = this.state.fileContents;
-          currentHashes.push(result);
-          this.setState({
-            fileContents: currentHashes
+          // let currentHashes = this.state.fileContents;
+          // currentHashes.push(result);
+          // this.setState({
+          //   fileContents: currentHashes
+          // })
+          let currentHashes = this.state.fileContents
+          currentHashes.push(result)
+          this.setState({fileContents : currentHashes})
+          var spaceArr = currentHashes.join(" ")
+          const options = { encrypt: true}
+          this.props.userSession.putFile('/hashes.txt', spaceArr, options)
+          .then(() => {
+            // this.setState({
+            //   hash: result
+            // })
+            //console.log(initResult)
+            console.log(spaceArr)
           })
 
         } else {
           
           const options = { encrypt: true}
-          const initResult = [result]
-          this.props.userSession.putFile('/hashes.json', initResult, options)
+          this.props.userSession.putFile('/hashes.txt', result, options)
           .then(() => {
             // this.setState({
             //   hash: result
             // })
-            console.log(initResult)
-            this.setState({fileContents : initResult})
+            //console.log(initResult)
+            this.setState({fileContents : [result]})
           })
 
         }
@@ -124,9 +138,11 @@ export default class Dashboard extends Component {
                 My Databases
               </div>
               <div className="databases-div">
-              {this.state.fillContents ? this.state.fileContents.map( obj => {
+              {this.state.fileContents ? this.state.fileContents.map((obj) => {
+                console.log(obj)
+                obj = encodeURIComponent(obj)
                   return (
-                    <Link to={`database/${obj}`} style={{color : "black", textDecoration : "none"}}>
+                    <Link to={`database/${obj}  `} style={{color : "black", textDecoration : "none"}}>
                       <div className="database-item">
                         <img src={db} width="100"></img>
                       </div>
@@ -165,7 +181,7 @@ export default class Dashboard extends Component {
 
     const { userSession } = this.props
 
-    // userSession.deleteFile("/hashes.json")
+    // userSession.deleteFile("/hashes.txt")
     // .then(() => {
     //    // /hello.txt is now removed.
     // })
@@ -173,7 +189,7 @@ export default class Dashboard extends Component {
       decrypt: true
     }
 
-    userSession.getFile("/hashes.json", options)
+    userSession.getFile("/hashes.txt", options)
     .then((fileContents) => {
         // // get & decrypt the contents of the file /message.txt
         // // assert(fileContents === "Secret hello!")
@@ -186,11 +202,23 @@ export default class Dashboard extends Component {
         // }
         
         console.log(fileContents)
-        if (fileContents){
-          this.setState({fileContents : fileContents})
-        }else{
+
+        if (fileContents == null){
           this.setState({fileContents : []})
         }
+        else if (/\s/.test(fileContents)){
+          this.setState({fileContents : fileContents.split(" ")})
+          console.log("hello")
+
+        }else{
+          this.setState({fileContents : fileContents.split(" ")})
+        }
+        
+        // if (fileContents){
+        //   this.setState({fileContents : fileContents})
+        // }else{
+        //   this.setState({fileContents : []})
+        // }
 
         console.log(this.state.fileContents, fileContents);
     });

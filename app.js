@@ -10,13 +10,15 @@ var createMasterDB = require('./routes/createMasterDB');
 var query = require('./routes/query');
 var setValues = require('./routes/setValues');
 var updateValues = require('./routes/updateValues');
-
+var getDB = require('./routes/getDB');
+var cors = require('cors')
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+app.use(cors())
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -29,6 +31,7 @@ app.use('/query', query)
 app.use('/setValues', setValues)
 app.use('/updateValues', updateValues)
 app.use('/createMasterDB', createMasterDB)
+app.use('/getDB', getDB);
 
 
 // catch 404 and forward to error handler

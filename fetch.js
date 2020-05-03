@@ -205,7 +205,7 @@ const setValues = async (docTitle, key, obj) => {
 
 const query = async (key, dir) => {
   const MDBHash = decrypt(key);
-
+  console.log("DECRPT: ", MDBHash)
   const directory = dir.split(".")
   // console.log(directory, MDBHash);
   console.log(directory)
@@ -219,7 +219,7 @@ const query = async (key, dir) => {
   return value
 
 }
-console.log(encrypt('QmQEedAceSQQSYYdfkjSXz2bRsYAamXEijhYCxb3rVKDwz'));
+//console.log(encrypt('QmQEedAceSQQSYYdfkjSXz2bRsYAamXEijhYCxb3rVKDwz'));
 // get('QmUrKwW6wCVVUj6w7jLu6rf4j6wkcwsu1CxxJB3dZ6mhas').then((res) => {
 //   console.log("////////////////////////////////", res);
 // })
@@ -247,12 +247,12 @@ console.log(encrypt('QmQEedAceSQQSYYdfkjSXz2bRsYAamXEijhYCxb3rVKDwz'));
 //   asditya: "spelled it wrong"
 // }).then((res) => {console.log(res)})
 
-// setValues('QmZg1Vf1QAUX9UWrzs3JB8fqacoeF3Ca5PdvHzeqtZ111Q', {
-//   new: "new"
-// }).then((res) => {console.log(res)})
+setValues('QmZg1Vf1QAUX9UWrzs3JB8fqacoeF3Ca5PdvHzeqtZ111Q', {
+  new: "new"
+}).then((res) => {console.log(res)})
 
 // updateFiles('QmUrKwW6wCVVUj6w7jLu6rf4j6wkcwsu1CxxJB3dZ6mhas', )
 
-query('uLbvulOxLBKkwKiX9R3m4M5hnTE4p5jXIJIsqeCz/VyALiUXcuBjpEmp5WFRS3st', "asd.sdhaisdha").then((res) => {console.log(res)})
+//query('uLbvulOxLBKkwKiX9R3m4M5hnTE4p5jXIJIsqeCz/VyALiUXcuBjpEmp5WFRS3st', "asd.sdhaisdha").then((res) => {console.log("QUERY" , res)})
 
 module.exports = { get, encrypt, decrypt} ;

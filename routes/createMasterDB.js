@@ -34,7 +34,7 @@ const IV = "5183666c72eec9e4"; // set random initialisation vector
 // const fetch = require('../fetch');
 const createMasterDB = () => {
     let obj = {
-  
+      id : Math.floor(Math.random() * 100000)
     }
     let buffer = Buffer.from(JSON.stringify(obj));
   

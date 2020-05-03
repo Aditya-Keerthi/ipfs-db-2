@@ -99,22 +99,27 @@
     width: 90%;
     margin: 40px;
     display: flex;
+
 }
 
 .dashboard-content{
     width: 80%;
-    min-width: fit-content;
     height: 80%;
     background: white;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     display: flex;
+
 }
 
 .databases-div{
-    width: 100%;
     height: inherit;
+    width :80%;
     display: flex;
+    flex-wrap: wrap;
+
+}
+.left-div{
 }
 
 .database-item{
@@ -135,11 +140,13 @@
 }
 
 .control-div{
-    width: 100%;
+    width: 400px;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 40px;
+
 }
 
 
@@ -150,6 +157,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
 }
 
 .database-content{
@@ -162,6 +170,7 @@
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     display: flex;
     flex-direction: column;
+
 }
 
 .database-info{
@@ -170,6 +179,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+
 }
 
 .database-table{
@@ -192,7 +203,7 @@
 
 .database-title{
     width: 100%;
-    background: rgb(233, 233, 233);
+    background: #495bff;
     height :fit-content;
     padding: 10px;
     border-radius: 15px 15px 0px 0px;
@@ -203,7 +214,7 @@
 .column-title{
     width: 100%;
     padding: 5px;
-    background: rgb(233, 233, 233);
+    background: #7b89ff;
     border-bottom: 1px solid rgb(92, 92, 92);
 }
 
@@ -230,4 +241,9 @@
 .col1-item-selected:hover{
     cursor: pointer;
     background: grey;
+}
+
+.form-div{
+    width :400px;
+    height: 100%;
 }

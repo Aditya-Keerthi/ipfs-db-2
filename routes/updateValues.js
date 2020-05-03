@@ -99,7 +99,7 @@ const updateValues = async (docTitle, key, obj) => {
 }
 
 router.post('/', async function(req, res, next) {
-
+  console.log(req.body.doctitle);
     await updateValues(req.body.doctitle, req.body.key, req.body.obj).then((result) => {
         res.send(result);
     })
