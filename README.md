@@ -1,4 +1,4 @@
-STEPS TO USE:
+##STEPS TO USE:
 
 Clone repo
 
