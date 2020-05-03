@@ -34,7 +34,7 @@ app.use('/createMasterDB', createMasterDB)
 app.use('/getDB', getDB);
 
 /* GET home page. */
-router.get('*', (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname+'/client/build/iApp.js'));
 });
 
