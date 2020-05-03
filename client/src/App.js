@@ -69,7 +69,7 @@ export default class App extends Component {
             <div className="big-container">
               <div className="navbar-div">
                 <div className="logo">
-                  DSaaS
+                  NoDeSQL
                 </div>
                 <div className="nav-links">
                   <Link to="/dashboard" style={{textDecoration: "none", color : "black"}}><div className="nav-link"><SvgIcon color="primary"><DashboardIcon></DashboardIcon></SvgIcon>Dashboard</div></Link>

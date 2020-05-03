@@ -9,7 +9,7 @@ export default class Signin extends Component {
     return (
       <div className="panel-landing">
         <p className="lead">
-          <p>Decentralized Storage as a Service</p>
+          <p>NoDeSQL</p>
           <div className="login-button">
             <Button
             color="primary"

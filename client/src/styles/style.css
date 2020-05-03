@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
 .site-wrapper{
     background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
     height: 100vh;
@@ -99,6 +101,7 @@
     width: 90%;
     margin: 40px;
     display: flex;
+    font-family: 'Ubuntu', sans-serif;
 
 }
 
@@ -114,9 +117,10 @@
 
 .databases-div{
     height: inherit;
-    width :80%;
+    width :100%;
     display: flex;
     flex-wrap: wrap;
+    font-family: 'Ubuntu', sans-serif;
 
 }
 .left-div{
@@ -179,6 +183,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Ubuntu', sans-serif;
 
 
 }
@@ -207,7 +212,10 @@
     height :fit-content;
     padding: 10px;
     border-radius: 15px 15px 0px 0px;
-    border : 1px solid rgb(92, 92, 92);
+    border : 1px solid rgb(92, 92, 92);    
+    font-family: 'Ubuntu', sans-serif;
+    color: black;
+
 
 }
 
@@ -216,6 +224,8 @@
     padding: 5px;
     background: #7b89ff;
     border-bottom: 1px solid rgb(92, 92, 92);
+    font-family: 'Ubuntu', sans-serif;
+
 }
 
 .column-content{
@@ -226,7 +236,12 @@
 }
 
 .col1-item{
-    padding: 5px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    justify-content: center;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .col1-item:hover{
@@ -235,15 +250,20 @@
 }
 
 .col1-item-selected{
-    padding: 5px;
-    background: grey;
+    padding: 20px;
+    background: rgb(175, 175, 175);
 }
 .col1-item-selected:hover{
     cursor: pointer;
-    background: grey;
+    background: rgb(161, 161, 161);
 }
 
 .form-div{
-    width :400px;
-    height: 100%;
+    margin: 40px;
+    width :200px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
