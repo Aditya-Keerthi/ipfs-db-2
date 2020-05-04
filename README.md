@@ -24,6 +24,6 @@ We are very proud of having the entire back-end fully functional and the website
 ## What we learned
 We learned how to use GAIA storage, which was very interesting to implement and we also learned about how insecure current database services are, and how we can make a decentralized approach to storing data intuitive for the common user and for web3 developers. 
 ## What's next for NoDeSQL
-We would like to implement other QoL features that are present in other NoSQL databases that make using other centralized forms of databases so convenient and easy. 
+We would like to implement other features that are present in other NoSQL databases that make using other centralized forms of databases so convenient and easy. We are also looking forward to publish this to npm and create it as a module, while also deploying this application so it's more easily accessible for users
 
 This was developed by Aditya Keerthi, Daniel Yu, and Arnav Tripathi. 
