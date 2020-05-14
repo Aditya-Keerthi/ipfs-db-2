@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import CircularProgress from '@material-ui/core/CircularProgress';
-
 
 class Database extends Component {
     constructor(props) {
@@ -32,7 +28,6 @@ class Database extends Component {
     };
     
     componentDidMount(){
-        
         var hash = this.props.hash
         //console.log(this.props.match)
         hash = decodeURIComponent(hash)
@@ -62,7 +57,7 @@ class Database extends Component {
                 keys.push(key)
                  });
                 this.setState({col1 : keys})
-                this.setState({loading : false})
+                
             })
           .catch(error => console.log('error', error));
      
@@ -127,7 +122,6 @@ class Database extends Component {
       
     // };
     addData(){
-        this.setState({loading : true})
         var title = document.getElementById("title").value
         var key = document.getElementById("key").value
         var value = document.getElementById("value").value
@@ -187,7 +181,7 @@ class Database extends Component {
                     <div className="database-title">Master database ({this.state.hash})</div>
                     <div className="database-table">
                         <div className="database-column database-column-left">
-                            <div className="column-title">Document</div>
+                            <div className="column-title">title1</div>
                             <div className="column-content">
                                 {this.state.col1.map((str, key)=> {
                                     if (key !== 0){
@@ -203,29 +197,22 @@ class Database extends Component {
                             </div>
                         </div>
                         <div className="database-column">
-                            <div className="column-title">Key</div>
+                            <div className="column-title">title2</div>
                             <div className="column-content">
-                                <div className="col1-item"> 
-                                    {this.state.col2}
-                                </div>
+                                {this.state.col2}
                             </div>
                         </div>
                         <div className="database-column database-column-right">
-                            <div className="column-title">Value</div>
+                            <div className="column-title">title3</div>
                             <div className="column-content">
-                                <div className="col1-item"> 
-                                    {this.state.col3}
-                                </div>
+                                {this.state.col3}
                             </div>
                         </div>
                 <div className="form-div">
-                    <TextField id="title" placeholder="Title"></TextField>
-                    <TextField id="key" placeholder="Key"></TextField>
-                    <TextField id="value" placeholder="Value"></TextField>
-
-                    <Button variant="contained"
-                color="primary" onClick={() => {this.addData()}} >Add/Update Data</Button>
-                {this.state.loading ? <CircularProgress ></CircularProgress> : null}
+                    <input type="text" id="title"></input>
+                    <input type="text" id="key"></input>
+                    <input type="text" id="value"></input>
+                    <button onClick={() => {this.addData()}}>Add data</button>
                 </div>
              </div>
                        

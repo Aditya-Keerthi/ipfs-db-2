@@ -6,7 +6,6 @@ import {Link} from "react-router-dom"
 import Button from '@material-ui/core/Button';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import StorageIcon from '@material-ui/icons/Storage';
-import CircularProgress from '@material-ui/core/CircularProgress';
 
 import db from "./internet.svg"
 
@@ -39,7 +38,6 @@ export default class Dashboard extends Component {
   }
   
   addDB(){
-    this.setState({loading : true})
     var requestOptions = {
       method: 'GET',
       redirect: 'follow'
@@ -70,8 +68,6 @@ export default class Dashboard extends Component {
             // })
             //console.log(initResult)
             console.log(spaceArr)
-            this.setState({loading : false})
-
           })
 
         } else {
@@ -84,8 +80,6 @@ export default class Dashboard extends Component {
             // })
             //console.log(initResult)
             this.setState({fileContents : [result]})
-            this.setState({loading : false})
-
           })
 
         }
@@ -167,8 +161,6 @@ export default class Dashboard extends Component {
               >
                 Create Database
               </Button>
-              <div style={{height : "30px"}}></div>
-              {this.state.loading ? <CircularProgress></CircularProgress> : null}
             </div>
           </div>
         </div>
@@ -189,10 +181,10 @@ export default class Dashboard extends Component {
 
     const { userSession } = this.props
 
-    userSession.deleteFile("/hashes.txt")
-    .then(() => {
-       // /hello.txt is now removed.
-    })
+    // userSession.deleteFile("/hashes.txt")
+    // .then(() => {
+    //    // /hello.txt is now removed.
+    // })
     let options = {
       decrypt: true
     }
